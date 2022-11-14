@@ -4,11 +4,13 @@ import { StartingPage } from 'components/StartingPage'
 import { AboutPage } from 'components/AboutPage'
 import { PriceContact } from 'components/PriceAndContactPage'
 import { ProjectsPage } from 'components/ProjectsPage'
-import { Footer } from 'components/Footer'
+/* import { Footer } from 'components/Footer' */
+import { GlobalStyles } from 'styled-components/GlobalStyles'
 
 export const App = () => {
   return (
     <BrowserRouter>
+      <GlobalStyles />
       <main>
         <Routes>
           <Route path="/" element={<StartingPage />} />
@@ -16,7 +18,7 @@ export const App = () => {
           <Route path="/price" element={<PriceContact />} />
           <Route path="/projects" element={<ProjectsPage />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </main>
     </BrowserRouter>
   )
