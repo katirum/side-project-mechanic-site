@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
 
   * {
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 0;
 
   }
   body{
@@ -18,9 +18,23 @@ export const GlobalStyles = createGlobalStyle`
     color: white;
     position: relative;
   }
+
 `
 
 export const OuterWrapper = styled.div`
-    max-width: 1024px;
-    margin: 30px 0;
+    /* max-width: 1024px;
+    margin: 0 auto; */
+`
+
+export const Button = styled.button`
+    color: floralwhite;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+
+    &:hover{
+        text-decoration: 2px underline floralwhite;
+        cursor: pointer;
+    }
 `

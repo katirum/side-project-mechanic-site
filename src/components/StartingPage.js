@@ -1,23 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { OuterWrapper } from 'styled-components/GlobalStyles';
+import { OuterWrapper, Button } from 'styled-components/GlobalStyles';
 
 export const StartingPage = () => {
   return (
     <OuterWrapper>
       <GridWrapper>
         <TitleWrapper>
-          <h1>Name</h1>
-          <p>The best mechanic</p>
+          <Overlay>
+            <h1>Jimmy</h1>
+            <h1>Högbom</h1>
+            <p>The best mechanic</p>
+          </Overlay>
         </TitleWrapper>
-        <div>
-          <Link to="/about"><button type="button">About</button></Link>
+        <NavWrapper>
+          <StyledLink to="/about"><Button type="button">About</Button></StyledLink>
 
-          <Link to="/price"><button type="button">Price and Contact</button></Link>
+          <StyledLink to="/price"><Button type="button">Price and Contact</Button></StyledLink>
 
-          <Link to="/projects"><button type="button">My Projects</button></Link>
-        </div>
+          <StyledLink to="/projects"><Button type="button">My Projects</Button></StyledLink>
+        </NavWrapper>
       </GridWrapper>
     </OuterWrapper>
   )
@@ -32,5 +35,50 @@ const GridWrapper = styled.div`
 `
 
 const TitleWrapper = styled.div`
-  background-image: url('');
+  background-image: url('/images/title.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 70vw;
+  position: relative;
+`
+
+const Overlay = styled.div`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1{
+    font-size: 120px;
+    font-family: 'Bebas Neue', cursive;
+    
+  }
+
+  p{
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'Roboto', sans-serif;
+  }
+`
+
+const NavWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 33% auto;
+
+  @media (min-width: 1024px) {
+    margin: 20% auto;
+  }
+`
+
+const StyledLink = styled(Link)`
+  margin: 10px 0;
 `
