@@ -1,19 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { Button, GoBackStyledLink, InnerWrapper } from 'styled-components/GlobalStyles';
 
 export const AboutPage = () => {
   return (
-    <div>
-      <div>
-        <Link to="/">
-          <button
+    <InnerWrapper>
+      <FirstContainer>
+        <GoBackStyledLink to="/">
+          <Button
             type="button">
                 Go Back
-          </button>
-        </Link>
-        <img src="http://placekitten.com/200/300" alt="bild" />
-      </div>
-      <div>
+          </Button>
+        </GoBackStyledLink>
+        <ProfilePictureContainer>
+          <img src="http://placekitten.com/200/300" alt="bild" />
+        </ProfilePictureContainer>
+
+      </FirstContainer>
+      <IntroductionContainer>
         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
             praesentium voluptatum deleniti atque corrupti quos dolores et quas
             molestias excepturi sint occaecati cupiditate non provident, similique
@@ -23,7 +27,35 @@ export const AboutPage = () => {
             Nam libero tempore, cum soluta nobis
             est eligendi optio cumque nihil impedit quo minus id quod maxime repellat.
         </p>
-      </div>
-    </div>
+      </IntroductionContainer>
+    </InnerWrapper>
   )
 }
+
+const FirstContainer = styled.div`
+  height: 500px;
+  padding-top: 30px;
+  background-image: url('/images/aboutheader.jpg');
+  background-position: center bottom;
+background-size: cover;
+`
+
+const ProfilePictureContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 50px;
+
+  img{
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: top center;
+  }
+`
+const IntroductionContainer = styled.div`
+  max-width: 90%;
+  margin: 10%;
+  text-align: center;
+`

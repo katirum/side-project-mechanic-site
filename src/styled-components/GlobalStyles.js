@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const GlobalStyles = createGlobalStyle`
   :root{
@@ -17,13 +18,12 @@ export const GlobalStyles = createGlobalStyle`
     background-color: black;
     color: white;
     position: relative;
+    font-family: 'Roboto', sans-serif;
   }
 
 `
-
-export const OuterWrapper = styled.div`
-    /* max-width: 1024px;
-    margin: 0 auto; */
+export const InnerWrapper = styled.div`
+  margin: 0 auto;
 `
 
 export const Button = styled.button`
@@ -32,9 +32,21 @@ export const Button = styled.button`
     border: none;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
+    transition: transform .5s; 
 
     &:hover{
-        text-decoration: 2px underline floralwhite;
         cursor: pointer;
+        transform: scale(1.05);
+
+    }
+`
+
+export const GoBackStyledLink = styled(Link)`
+  margin: 30px;
+  border-bottom: 1px solid var(--white);
+  transition: transform .5s; 
+
+&:hover{
+    transform: scale(2);
     }
 `

@@ -1,35 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { OuterWrapper, Button } from 'styled-components/GlobalStyles';
+import { Button } from 'styled-components/GlobalStyles';
 
 export const StartingPage = () => {
   return (
-    <OuterWrapper>
-      <GridWrapper>
-        <TitleWrapper>
-          <Overlay>
-            <h1>Jimmy</h1>
-            <h1>Högbom</h1>
-            <p>The best mechanic</p>
-          </Overlay>
-        </TitleWrapper>
-        <NavWrapper>
-          <StyledLink to="/about"><Button type="button">About</Button></StyledLink>
+    <FlexWrapper>
+      <TitleWrapper>
+        <Overlay>
+          <h1>Jimmy</h1>
+          <h1>Högbom</h1>
+          <p>The best mechanic</p>
+        </Overlay>
+      </TitleWrapper>
+      <NavWrapper>
+        <StyledLink to="/about"><Button type="button">About</Button></StyledLink>
 
-          <StyledLink to="/price"><Button type="button">Price and Contact</Button></StyledLink>
+        <StyledLink to="/price"><Button type="button">Price and Contact</Button></StyledLink>
 
-          <StyledLink to="/projects"><Button type="button">My Projects</Button></StyledLink>
-        </NavWrapper>
-      </GridWrapper>
-    </OuterWrapper>
+        <StyledLink to="/projects"><Button type="button">My Projects</Button></StyledLink>
+      </NavWrapper>
+    </FlexWrapper>
   )
 }
 
-const GridWrapper = styled.div`
-  /* display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-row: 1/3; */
+const FlexWrapper = styled.div`
   display: flex;
 
 `
@@ -49,7 +44,7 @@ const Overlay = styled.div`
   width: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.70);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,4 +76,12 @@ const NavWrapper = styled.div`
 
 const StyledLink = styled(Link)`
   margin: 10px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--white);
+  transition: transform .5s; 
+
+    &:hover{
+        transform: scale(1.05);
+
+    }
 `
